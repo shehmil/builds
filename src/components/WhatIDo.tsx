@@ -87,22 +87,23 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>CLOUD & INFRA</h3>
-              <h4>Scalable Architecture</h4>
+              <h3>KUBERNETES & CLOUD</h3>
+              <h4>Orchestration & Scalability</h4>
               <p>
-                Designing high-availability systems on AWS and GCP. Automating 
-                provisioning with Terraform and Ansible for maximum efficiency.
+                Architecting high-availability EKS/GKE clusters with 99.9% uptime. 
+                Implementing Infrastructure-as-Code (Terraform) and GitOps (ArgoCD) 
+                to automate multi-cloud provisioning and global resource management.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
+                <div className="what-tags">Kubernetes</div>
                 <div className="what-tags">AWS</div>
                 <div className="what-tags">GCP</div>
                 <div className="what-tags">Terraform</div>
-                <div className="what-tags">Ansible</div>
-                <div className="what-tags">Docker</div>
-                <div className="what-tags">Kubernetes</div>
                 <div className="what-tags">Helm</div>
+                <div className="what-tags">ArgoCD</div>
                 <div className="what-tags">Istio</div>
+                <div className="what-tags">CloudNative</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -126,22 +127,23 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>CI/CD & MONITORING</h3>
-              <h4>Automated Pipelines</h4>
+              <h3>SRE & OBSERVABILITY</h3>
+              <h4>Reliability & Automation</h4>
               <p>
-                Building robust Jenkins pipelines and implementing monitoring 
-                with Prometheus/Grafana to reduce incident response time.
+                Engineering robust CI/CD ecosystems and establishing SLI/SLO-based 
+                monitoring using Prometheus and Grafana. Driving system resilience 
+                through Python/Bash automation and reducing MTTR by 30%.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Jenkins</div>
-                <div className="what-tags">ArgoCD</div>
                 <div className="what-tags">Prometheus</div>
                 <div className="what-tags">Grafana</div>
+                <div className="what-tags">Jenkins</div>
+                <div className="what-tags">GitHub Actions</div>
                 <div className="what-tags">Python</div>
                 <div className="what-tags">Bash</div>
-                <div className="what-tags">Packer</div>
-                <div className="what-tags">SonarQube</div>
+                <div className="what-tags">SRE</div>
+                <div className="what-tags">Observability</div>
               </div>
               <div className="what-arrow"></div>
             </div>
