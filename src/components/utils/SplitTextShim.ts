@@ -5,7 +5,7 @@ export class SplitText {
   words: HTMLElement[] = [];
   lines: HTMLElement[] = [];
 
-  constructor(target: any, vars: any) {
+  constructor(target: any, _vars: any) {
     const el = typeof target === 'string' ? document.querySelectorAll(target) : (target.length ? target : [target]);
     this.elements = Array.from(el);
     this.split();
