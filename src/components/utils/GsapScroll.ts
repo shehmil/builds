@@ -92,7 +92,7 @@ export function setCharTimeline(
         .fromTo(
           ".what-box-in",
           { display: "none" },
-          { display: "flex", duration: 0.1, delay: 6 },
+          { display: "flex", duration: 0.1, delay: 5.5 }, // Faster reveal
           0
         )
         .fromTo(
@@ -115,7 +115,7 @@ export function setCharTimeline(
           { y: "-100%", duration: 4, ease: "none", delay: 1 },
           0
         )
-        .fromTo(".whatIDO", { y: 0 }, { y: "15%", duration: 2 }, 0)
+        .fromTo(".whatIDO", { y: 0 }, { y: "5%", duration: 2 }, 0) // Reduced Y movement for better alignment
         .to(character.rotation, { x: -0.04, duration: 2, delay: 1 }, 0);
     }
   } else {
