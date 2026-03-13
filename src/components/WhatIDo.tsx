@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
@@ -8,6 +9,25 @@ const WhatIDo = () => {
     containerRef.current[index] = el;
   };
   useEffect(() => {
+    // Staggered reveal animation for tags
+    gsap.fromTo(
+      ".what-tags",
+      { opacity: 0, y: 30, filter: "blur(5px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".whatIDO",
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
         if (container) {

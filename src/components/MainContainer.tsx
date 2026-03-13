@@ -25,11 +25,12 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     // Initialize Lenis with refined physics
     const lenis = new Lenis({
-      duration: 1.4, // Slightly slower for more "weight"
+      duration: 1.8, // Slower, heavier scroll for a premium feel
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 2.2,
+      lerp: 0.05, // Adds that 'inertia' feeling
     });
     lenisRef.current = lenis;
 
