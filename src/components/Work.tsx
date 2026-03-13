@@ -8,31 +8,31 @@ const projects = [
     title: "Solid Starters",
     category: "Low-Code Platform",
     tools: "Angular, Next.js, NestJS, MongoDB",
-    image: "/images/Solidx.png",
+    image: "images/Solidx.png",
   },
   {
     title: "Radix",
     category: "E-Commerce",
     tools: "Angular, Next.js, NestJS, CMS",
-    image: "/images/radix.png",
+    image: "images/radix.png",
   },
   {
     title: "Bond Cancellation",
     category: "Import-Export Automation",
     tools: "Angular, Next.js, NestJS, Workflows",
-    image: "/images/bond.png",
+    image: "images/bond.png",
   },
   {
     title: "Sapphire",
     category: "CRM Platform",
     tools: "AngularJS, NestJS, PostgreSQL",
-    image: "/images/sapphire.png",
+    image: "images/sapphire.png",
   },
   {
     title: "Mpro",
     category: "Insurance Platform",
     tools: "React.js, Node.js, Microservices",
-    image: "/images/Maxlife.png",
+    image: "images/Maxlife.png",
   },
 ];
 
