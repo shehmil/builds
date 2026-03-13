@@ -9,14 +9,14 @@
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
-  z-index: 9;
+  z-index: 99; /* 🌟 Increase z-index for the section */
 }
 .what-box {
   width: 50%;
   display: flex;
   justify-content: center;
   position: relative;
-  z-index: 9;
+  z-index: 100; /* 🌟 Increase z-index for the box contents */
 }
 .what-box h2 {
   font-size: calc(4vw + 25px);
@@ -38,6 +38,7 @@
   margin-left: 200px;
   position: relative;
   display: none;
+  z-index: 101; /* 🌟 Layering above the character model */
 }
 .what-content {
   width: 450px;
@@ -48,6 +49,7 @@
   position: relative;
   padding: 50px;
   box-sizing: border-box;
+  z-index: 102; /* 🌟 Ensure tags stay at the top layer */
 }
 
 .what-noTouch:hover,
