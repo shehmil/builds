@@ -205,8 +205,8 @@
   position: absolute;
 }
 .what-content-in {
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
 }
 .what-content-in h5 {
   font-weight: 300;
@@ -230,6 +230,7 @@
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
+  opacity: 1 !important;
 }
 .what-tags {
   font-size: 13px;
