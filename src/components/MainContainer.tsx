@@ -1,4 +1,4 @@
-import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
+import { lazy, PropsWithChildren, Suspense, useEffect, useState, useRef } from "react";
 import About from "./About";
 import Career from "./Career";
 import Contact from "./Contact";
@@ -11,6 +11,8 @@ import Work from "./Work";
 import setSplitText from "./utils/splitText";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const TechStack = lazy(() => import("./TechStack"));
 
@@ -18,25 +20,29 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
     window.innerWidth > 1024
   );
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    // Initialize Lenis with refined physics
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.4, // Slightly slower for more "weight"
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: "vertical",
-      gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
-      infinite: false,
+    });
+    lenisRef.current = lenis;
+
+    // Sync Lenis with GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Add Lenis to GSAP's ticker
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+    // Disable lag smoothing for GSAP for perfect sync
+    gsap.ticker.lagSmoothing(0);
 
     const resizeHandler = () => {
       setSplitText();
@@ -44,8 +50,10 @@ const MainContainer = ({ children }: PropsWithChildren) => {
     };
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
+    
     return () => {
       lenis.destroy();
+      gsap.ticker.remove(() => {});
       window.removeEventListener("resize", resizeHandler);
     };
   }, [isDesktopView]);
