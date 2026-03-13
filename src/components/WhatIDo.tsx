@@ -8,8 +8,9 @@ const WhatIDo = () => {
   const setRef = (el: HTMLDivElement | null, index: number) => {
     containerRef.current[index] = el;
   };
+
   useEffect(() => {
-    // Staggered reveal animation for tags
+    // 🌟 GSAP Animation (Same as MoncyDev, but improved for stability)
     gsap.fromTo(
       ".what-tags",
       { opacity: 0, y: 30 },
@@ -43,6 +44,7 @@ const WhatIDo = () => {
       });
     };
   }, []);
+
   return (
     <div className="whatIDO">
       <div className="what-box">
@@ -57,50 +59,17 @@ const WhatIDo = () => {
         <div className="what-box-in">
           <div className="what-border2">
             <svg width="100%">
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-              <line
-                x1="100%"
-                y1="0"
-                x2="100%"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
+              <line x1="0" y1="0" x2="0" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="7,7" />
+              <line x1="100%" y1="0" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="7,7" />
             </svg>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
+
+          {/* 🌟 KUBERNETES & CLOUD SECTION */}
+          <div className="what-content what-noTouch" ref={(el) => setRef(el, 0)}>
             <div className="what-border1">
               <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
+                <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
@@ -111,7 +80,7 @@ const WhatIDo = () => {
               <p>
                 Architecting high-availability EKS/GKE clusters with 99.9% uptime. 
                 Implementing Infrastructure-as-Code (Terraform) and GitOps (ArgoCD) 
-                to automate multi-cloud provisioning and global resource management.
+                to automate multi-cloud provisioning.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -127,21 +96,12 @@ const WhatIDo = () => {
               <div className="what-arrow"></div>
             </div>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
+
+          {/* 🌟 SRE & OBSERVABILITY SECTION */}
+          <div className="what-content what-noTouch" ref={(el) => setRef(el, 1)}>
             <div className="what-border1">
               <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
@@ -151,7 +111,7 @@ const WhatIDo = () => {
               <p>
                 Engineering robust CI/CD ecosystems and establishing SLI/SLO-based 
                 monitoring using Prometheus and Grafana. Driving system resilience 
-                through Python/Bash automation and reducing MTTR by 30%.
+                through Python/Bash automation.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
@@ -180,7 +140,6 @@ function handleClick(container: HTMLDivElement) {
   container.classList.remove("what-sibling");
   if (container.parentElement) {
     const siblings = Array.from(container.parentElement.children);
-
     siblings.forEach((sibling) => {
       if (sibling !== container) {
         sibling.classList.remove("what-content-active");
