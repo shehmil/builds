@@ -12,15 +12,17 @@ import {
 } from "@react-three/rapier";
 
 const textureLoader = new THREE.TextureLoader();
+textureLoader.setCrossOrigin("anonymous"); // Enable CORS for CDN icons
+
 const imageUrls = [
-  "images/react2.webp",
-  "images/next2.webp",
-  "images/node2.webp",
-  "images/express.webp",
-  "images/mongo.webp",
-  "images/mysql.webp",
-  "images/typescript.webp",
-  "images/javascript.webp",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.png",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.png",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-plain.png",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.png",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-plain.png",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.png",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.png",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
@@ -168,7 +170,7 @@ const TechStack = () => {
 
   return (
     <div className="techstack">
-      <h2> My Techstack</h2>
+      <h2> My DevOps Stack</h2>
 
       <Canvas
         shadows
