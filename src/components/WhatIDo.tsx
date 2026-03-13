@@ -12,18 +12,17 @@ const WhatIDo = () => {
     // Staggered reveal animation for tags
     gsap.fromTo(
       ".what-tags",
-      { opacity: 0, y: 30, filter: "blur(5px)" },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
-        duration: 0.8,
+        duration: 0.6,
         stagger: 0.05,
-        ease: "power3.out",
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: ".whatIDO",
-          start: "top 60%",
-          toggleActions: "play none none reverse",
+          trigger: ".what-content",
+          start: "top 85%",
+          once: true,
         },
       }
     );
