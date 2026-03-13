@@ -6,8 +6,21 @@ export class SplitText {
   lines: HTMLElement[] = [];
 
   constructor(target: any, _vars: any) {
-    const el = typeof target === 'string' ? document.querySelectorAll(target) : (target.length ? target : [target]);
-    this.elements = Array.from(el);
+    let el: HTMLElement[] = [];
+    if (typeof target === 'string') {
+      el = Array.from(document.querySelectorAll(target));
+    } else if (Array.isArray(target)) {
+      target.forEach(t => {
+        if (typeof t === 'string') {
+          el = el.concat(Array.from(document.querySelectorAll(t)));
+        } else {
+          el.push(t);
+        }
+      });
+    } else {
+      el = [target];
+    }
+    this.elements = el;
     this.split();
   }
 
