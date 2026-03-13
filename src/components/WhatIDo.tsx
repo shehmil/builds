@@ -78,20 +78,15 @@ const WhatIDo = () => {
               <h3>KUBERNETES & CLOUD</h3>
               <h4>Orchestration & Scalability</h4>
               <p>
-                Architecting high-availability EKS/GKE clusters with 99.9% uptime. 
-                Implementing Infrastructure-as-Code (Terraform) and GitOps (ArgoCD) 
-                to automate multi-cloud provisioning.
+                Architecting high-availability EKS/GKE clusters. Implementing 
+                Infrastructure-as-Code and GitOps.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">Kubernetes</div>
                 <div className="what-tags">AWS</div>
-                <div className="what-tags">GCP</div>
                 <div className="what-tags">Terraform</div>
-                <div className="what-tags">Helm</div>
                 <div className="what-tags">ArgoCD</div>
-                <div className="what-tags">Istio</div>
-                <div className="what-tags">CloudNative</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -110,19 +105,14 @@ const WhatIDo = () => {
               <h4>Reliability & Automation</h4>
               <p>
                 Engineering robust CI/CD ecosystems and establishing SLI/SLO-based 
-                monitoring using Prometheus and Grafana. Driving system resilience 
-                through Python/Bash automation.
+                monitoring.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">Prometheus</div>
                 <div className="what-tags">Grafana</div>
                 <div className="what-tags">Jenkins</div>
-                <div className="what-tags">GitHub Actions</div>
                 <div className="what-tags">Python</div>
-                <div className="what-tags">Bash</div>
-                <div className="what-tags">SRE</div>
-                <div className="what-tags">Observability</div>
               </div>
               <div className="what-arrow"></div>
             </div>
