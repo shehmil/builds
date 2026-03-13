@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import { Environment, useTexture } from "@react-three/drei";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import {
   BallCollider,
@@ -11,20 +11,16 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
-textureLoader.setCrossOrigin("anonymous"); // Enable CORS for CDN icons
-
 const imageUrls = [
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.png",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.png",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-plain.png",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.png",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-plain.png",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.png", // Changed to png
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.png",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.png",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -128,6 +124,7 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
 
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
+  const textures = useTexture(imageUrls);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -166,7 +163,7 @@ const TechStack = () => {
           clearcoat: 0.1,
         })
     );
-  }, []);
+  }, [textures]);
 
   return (
     <div className="techstack">
