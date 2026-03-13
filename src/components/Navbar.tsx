@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
+import Lenis from "lenis";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,8 +18,14 @@ const Navbar = () => {
           let elem = e.currentTarget as HTMLAnchorElement;
           let sectionId = elem.getAttribute("data-href");
           if (sectionId) {
+            const lenis = new Lenis();
             const section = document.querySelector(sectionId);
-            section?.scrollIntoView({ behavior: "smooth" });
+            if (section) {
+              lenis.scrollTo(section as HTMLElement, {
+                duration: 1.5,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+              });
+            }
           }
         }
       });
